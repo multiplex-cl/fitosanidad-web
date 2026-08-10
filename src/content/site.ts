@@ -20,10 +20,11 @@ export const site = {
 
 /**
  * Access key de Web3Forms (web3forms.com) para el formulario de contacto.
- * TODO: reemplazar por la Access Key propia de Fitosanidad antes de publicar.
- * Mientras esté vacía, el formulario usa un fallback por mailto.
+ * Pública por diseño (va en el cliente); reenvía cada envío a la cuenta de
+ * Web3Forms configurada. Mientras esté vacía, el formulario usa un fallback
+ * por mailto — ya no aplica.
  */
-export const web3formsKey = "";
+export const web3formsKey = "cd9f90df-51cd-477b-8b2b-7f9eea01e49a";
 
 export type NavItem = {
   label: string;
