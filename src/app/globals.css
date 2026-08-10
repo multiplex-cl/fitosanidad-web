@@ -13,9 +13,9 @@
   --color-line: 226 232 240; /* bordes suaves */
   --color-muted: 90 102 122; /* texto secundario */
 
-  --color-brand: 20 121 190; /* azul de marca Multiplex (#1479BE) */
-  --color-brand-soft: 226 240 251; /* azul muy claro para fondos (#E2F0FB) */
-  --color-brand-strong: 15 90 143; /* azul profundo para hover (#0F5A8F) */
+  --color-brand: 0 113 188; /* azul de marca Multiplex, del logo oficial (#0071BC) */
+  --color-brand-soft: 228 240 249; /* azul muy claro para fondos */
+  --color-brand-strong: 0 85 141; /* azul profundo para hover (#00558D) */
 
   --color-accent: 14 116 144; /* cian-azul — acentos y gradientes (#0E7490) */
 
