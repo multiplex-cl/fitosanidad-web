@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHero } from "@/components/sections/Hero";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
-import { news } from "@/content/data";
+import { ArrowRight } from "@/components/ui/Button";
+import { newsPosts } from "@/content/data";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -11,21 +13,38 @@ export const metadata: Metadata = buildMetadata({
   path: "/noticias",
 });
 
-const formatter = new Intl.DateTimeFormat("es-CL", { day: "numeric", month: "long", year: "numeric" });
+const formatter = new Intl.DateTimeFormat("es-CL", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 
 export default function NoticiasPage() {
   return (
     <>
-      <PageHero eyebrow="NOTICIAS" title="Novedades de Multiplex y Viroscope" subtitle="Un registro de nuestra participación en la comunidad fitosanitaria y agrícola." />
+      <PageHero
+        eyebrow="NOTICIAS"
+        title="Novedades de Multiplex y Viroscope"
+        subtitle="Un registro de nuestra participación en la comunidad fitosanitaria y agrícola."
+      />
 
       <Section tone="light">
         <ol className="mx-auto max-w-2xl space-y-4">
-          {news.map((item, i) => (
-            <Reveal key={item.title} delay={(i % 5) * 40} as="li" className="card-surface flex flex-col gap-1.5 p-5 sm:flex-row sm:items-baseline sm:gap-6 sm:p-6">
-              <time dateTime={item.date} className="flex-none text-sm font-semibold uppercase tracking-wide text-brand-strong sm:w-40">
-                {formatter.format(new Date(item.date))}
-              </time>
-              <p className="text-[15px] leading-relaxed text-ink">{item.title}</p>
+          {newsPosts.map((post, i) => (
+            <Reveal key={post.slug} delay={(i % 5) * 40} as="li">
+              <Link
+                href={`/noticias/${post.slug}`}
+                className="card-surface group block p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:p-6"
+              >
+                <time
+                  dateTime={post.date}
+                  className="text-sm font-semibold uppercase tracking-wide text-brand-strong"
+                >
+                  {formatter.format(new Date(post.date))}
+                </time>
+                <h2 className="mt-2 text-lg font-semibold leading-snug text-ink">{post.title}</h2>
+                <p className="mt-2 text-[15px] leading-relaxed text-muted">{post.excerpt}</p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-strong">
+                  Leer nota completa
+                  <ArrowRight className="transition group-hover:translate-x-0.5" />
+                </span>
+              </Link>
             </Reveal>
           ))}
         </ol>
