@@ -25,25 +25,33 @@ export default function NoticiasPage() {
       />
 
       <Section tone="light">
-        <ol className="mx-auto max-w-2xl space-y-4">
+        <ol className="mx-auto max-w-3xl space-y-4">
           {newsPosts.map((post, i) => (
             <Reveal key={post.slug} delay={(i % 5) * 40} as="li">
               <Link
                 href={`/noticias/${post.slug}`}
-                className="card-surface group block p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:p-6"
+                className="card-surface group flex flex-col gap-5 p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:flex-row sm:p-6"
               >
-                <time
-                  dateTime={post.date}
-                  className="text-sm font-semibold uppercase tracking-wide text-brand-strong"
-                >
-                  {formatter.format(new Date(post.date))}
-                </time>
-                <h2 className="mt-2 text-lg font-semibold leading-snug text-ink">{post.title}</h2>
-                <p className="mt-2 text-[15px] leading-relaxed text-muted">{post.excerpt}</p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-strong">
-                  Leer nota completa
-                  <ArrowRight className="transition group-hover:translate-x-0.5" />
-                </span>
+                <img
+                  src={post.image}
+                  alt=""
+                  loading="lazy"
+                  className="h-44 w-full flex-none rounded-xl object-cover sm:h-28 sm:w-40"
+                />
+                <div>
+                  <time
+                    dateTime={post.date}
+                    className="text-sm font-semibold uppercase tracking-wide text-brand-strong"
+                  >
+                    {formatter.format(new Date(post.date))}
+                  </time>
+                  <h2 className="mt-2 text-lg font-semibold leading-snug text-ink">{post.title}</h2>
+                  <p className="mt-2 text-[15px] leading-relaxed text-muted">{post.excerpt}</p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-strong">
+                    Leer nota completa
+                    <ArrowRight className="transition group-hover:translate-x-0.5" />
+                  </span>
+                </div>
               </Link>
             </Reveal>
           ))}

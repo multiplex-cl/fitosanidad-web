@@ -26,14 +26,12 @@ Mismo patrón que el repo `multiplex-cl/web`: `src/app/*` (rutas), `src/componen
 `src/content/{site.ts,data.ts}` (nav, footer, servicios, razones, noticias — todo el copy vive aquí),
 `src/lib/{cn,seo}.ts`.
 
-## Pendientes antes de publicar
+## Estado de publicación
 
-- **`public/CNAME`**: apunta a `fitosanidad.multiplex.cl`. Ajustar si el dominio final es otro.
-- **Noticias** (`src/content/data.ts` → `news`): son solo títulos y fechas extraídos del sitio
-  anterior; no incluyen el cuerpo de cada artículo ni enlaces individuales.
+- **Dominio**: publicado en `fitosanidad.multiplex.bio` (GitHub Pages). `public/CNAME` y
+  `site.url` en `src/content/site.ts` reflejan este dominio.
 - **Imágenes**: el sitio anterior usaba fotografía de stock de laboratorio; esta versión usa
   las mismas visualizaciones SVG abstractas (moléculas, iconos de línea) que multiplex.bio en
   su lugar, para mantener consistencia visual y evitar depender de licencias de fotografía.
 - **Deploy**: el workflow en `.github/workflows/deploy-pages.yml` publica `./out` a GitHub
-  Pages en cada push a `master`. Requiere habilitar Pages → "GitHub Actions" como fuente en la
-  configuración del repositorio.
+  Pages en cada push a `master`.

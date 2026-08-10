@@ -17,11 +17,17 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const post = newsPosts.find((p) => p.slug === params.slug);
   if (!post) return {};
-  return buildMetadata({
+  const metadata = buildMetadata({
     title: post.title,
     description: post.excerpt,
     path: `/noticias/${post.slug}`,
   });
+  const image = { url: post.image, alt: post.title };
+  return {
+    ...metadata,
+    openGraph: { ...metadata.openGraph, images: [image] },
+    twitter: { ...metadata.twitter, images: [post.image] },
+  };
 }
 
 export default function NewsPostPage({ params }: { params: { slug: string } }) {
@@ -49,6 +55,13 @@ export default function NewsPostPage({ params }: { params: { slug: string } }) {
             </svg>
             Volver a Noticias
           </Link>
+          <Reveal>
+            <img
+              src={post.image}
+              alt=""
+              className="mt-6 aspect-[16/9] w-full rounded-2xl border border-line object-cover"
+            />
+          </Reveal>
           <Reveal className="mt-8 space-y-5">
             {post.body.map((block, i) => {
               if (block.type === "h3") {

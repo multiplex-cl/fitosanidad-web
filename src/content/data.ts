@@ -126,6 +126,7 @@ export type NewsPost = {
   date: string;
   title: string;
   excerpt: string;
+  image: string;
   body: NewsBlock[];
 };
 
@@ -139,6 +140,7 @@ export const newsPosts: NewsPost[] = [
     date: "2025-01-20",
     title: "Multiplex Viroscope Arica en el foco fitosanitario: Diagnósticos moleculares para una agricultura sostenible",
     excerpt: "Junto a la Universidad de Tarapacá, lanzamos un Programa de Fitosanidad que detecta patógenos emergentes en hortalizas clave de la región de Arica.",
+    image: "/images/noticias/arica.jpg",
     body: [
       {
         type: "p",
@@ -175,6 +177,7 @@ export const newsPosts: NewsPost[] = [
     date: "2024-12-14",
     title: "Multiplex y Viroscope, aseguramos material vegetal libre de virus y viroides",
     excerpt: "Viroscope combina secuenciación de nueva generación con análisis masivo de datos para detectar virus y viroides con alta certeza, a USD 250 por muestra.",
+    image: "/images/noticias/material-vegetal-libre-de-virus.jpg",
     body: [
       {
         type: "p",
@@ -199,6 +202,7 @@ export const newsPosts: NewsPost[] = [
     date: "2024-11-05",
     title: "Viroscope: Innovación en Sanidad Vegetal para la Agricultura Moderna",
     excerpt: "Un sistema de fitodiagnóstico avanzado que utiliza secuenciación masiva para ofrecer diagnósticos precisos en cualquier fase del ciclo productivo.",
+    image: "/images/noticias/innovacion-sanidad-vegetal.jpg",
     body: [
       {
         type: "p",
@@ -242,6 +246,7 @@ export const newsPosts: NewsPost[] = [
     date: "2024-10-26",
     title: "Multiplex en Euroseed e InnovActionStage 2024",
     excerpt: "En Copenhague, Multiplex fue la única empresa latinoamericana finalista del InnovAction Stage, presentando Viroscope ante la audiencia internacional.",
+    image: "/images/noticias/euroseed-innovactionstage-2024.jpg",
     body: [
       {
         type: "p",
@@ -270,6 +275,7 @@ export const newsPosts: NewsPost[] = [
     date: "2024-10-04",
     title: "Multiplex, seleccionado finalista del Innovaction Stage 2024 organizado por EUROSEEDS",
     excerpt: "Multiplex es la única empresa latinoamericana con presencia en la UE entre los 12 finalistas globales, distinguida por su tecnología Viroscope.",
+    image: "/images/noticias/12-finalistas-euroseeds.jpg",
     body: [
       {
         type: "p",
@@ -296,6 +302,7 @@ export const newsPosts: NewsPost[] = [
     date: "2024-10-02",
     title: "Participación de la Segunda Convocatoria al Programa de Fitosanidad de Multiplex con metodología Viroscope",
     excerpt: "Viveristas, productores, exportadores, semilleros y propagadores están invitados a postular, sin costo, entre el 2 y el 9 de octubre de 2024.",
+    image: "/images/noticias/segunda-convocatoria-fitosanidad.jpg",
     body: [
       {
         type: "p",
@@ -332,6 +339,7 @@ export const newsPosts: NewsPost[] = [
     date: "2024-09-09",
     title: "Convocatoria para el Piloto Viroscope",
     excerpt: "Los primeros 30 inscritos podrán testear, sin costo, su material vegetal en el laboratorio de Multiplex, como parte de un piloto de escalabilidad de Viroscope.",
+    image: "/images/noticias/piloto-viroscope.jpg",
     body: [
       {
         type: "p",
@@ -362,6 +370,7 @@ export const newsPosts: NewsPost[] = [
     date: "2024-08-06",
     title: "Multiplex entre los 12 finalistas del Euroseeds 2024 InnovActionStage",
     excerpt: "Única empresa finalista fuera de Estados Unidos y la Unión Europea, distinguida por Viroscope™ y su capacidad de asegurar germoplasma libre de virus.",
+    image: "/images/noticias/12-finalistas-euroseeds.jpg",
     body: [
       {
         type: "p",
@@ -391,6 +400,7 @@ export const newsPosts: NewsPost[] = [
     date: "2024-06-08",
     title: "Multiplex y Viroscope: Revolucionando la Competitividad y Rentabilidad en la Cadena Productiva Agrícola",
     excerpt: "Un caso real en Chile compara el costo de 10 análisis anuales por Viroscope (HTS) frente a 1.600 análisis por qPCR en un vivero-huerto-exportadora.",
+    image: "/images/noticias/competitividad-rentabilidad-agricola.jpg",
     body: [
       {
         type: "p",

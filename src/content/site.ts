@@ -7,8 +7,7 @@ export const site = {
   name: "Multiplex Fitosanidad",
   legalName: "Multiplex SpA",
   tagline: "Diagnóstico molecular fitosanitario de vanguardia",
-  // TODO: una vez publicado en GitHub Pages con dominio propio, confirmar esta URL.
-  url: "https://fitosanidad.multiplex.cl",
+  url: "https://fitosanidad.multiplex.bio",
   locale: "es-CL",
   country: "Chile",
   email: "contacto@multiplex.bio",
