@@ -5,6 +5,7 @@ import { PageHero } from "@/components/sections/Hero";
 import { CTABand } from "@/components/sections/CTABand";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
+import { LogoMark } from "@/components/ui/Logo";
 import { newsPosts } from "@/content/data";
 import { buildMetadata } from "@/lib/seo";
 
@@ -22,6 +23,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     description: post.excerpt,
     path: `/noticias/${post.slug}`,
   });
+  if (!post.image) return metadata;
   const image = { url: post.image, alt: post.title };
   return {
     ...metadata,
@@ -56,11 +58,17 @@ export default function NewsPostPage({ params }: { params: { slug: string } }) {
             Volver a Noticias
           </Link>
           <Reveal>
-            <img
-              src={post.image}
-              alt=""
-              className="mt-6 aspect-[16/9] w-full rounded-2xl border border-line object-cover"
-            />
+            {post.image ? (
+              <img
+                src={post.image}
+                alt=""
+                className="mt-6 aspect-[16/9] w-full rounded-2xl border border-line object-cover"
+              />
+            ) : (
+              <div className="mt-6 flex aspect-[16/9] w-full items-center justify-center rounded-2xl border border-line bg-brand-soft">
+                <LogoMark className="h-16 w-16 text-brand-strong" cutColor="#E4F0F9" />
+              </div>
+            )}
           </Reveal>
           <Reveal className="mt-8 space-y-5">
             {post.body.map((block, i) => {

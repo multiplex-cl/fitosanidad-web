@@ -4,6 +4,7 @@ import { PageHero } from "@/components/sections/Hero";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowRight } from "@/components/ui/Button";
+import { LogoMark } from "@/components/ui/Logo";
 import { newsPosts } from "@/content/data";
 import { buildMetadata } from "@/lib/seo";
 
@@ -32,12 +33,18 @@ export default function NoticiasPage() {
                 href={`/noticias/${post.slug}`}
                 className="card-surface group flex flex-col gap-5 p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:flex-row sm:p-6"
               >
-                <img
-                  src={post.image}
-                  alt=""
-                  loading="lazy"
-                  className="h-44 w-full flex-none rounded-xl object-cover sm:h-28 sm:w-40"
-                />
+                {post.image ? (
+                  <img
+                    src={post.image}
+                    alt=""
+                    loading="lazy"
+                    className="h-44 w-full flex-none rounded-xl object-cover sm:h-28 sm:w-40"
+                  />
+                ) : (
+                  <div className="flex h-44 w-full flex-none items-center justify-center rounded-xl bg-brand-soft sm:h-28 sm:w-40">
+                    <LogoMark className="h-8 w-8 text-brand-strong" cutColor="#E4F0F9" />
+                  </div>
+                )}
                 <div>
                   <time
                     dateTime={post.date}

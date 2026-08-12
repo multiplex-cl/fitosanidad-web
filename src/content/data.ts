@@ -15,6 +15,35 @@ export type Platform = {
   points: readonly string[];
 };
 
+export type PathogenPanel = {
+  crop: string;
+  pathogens: readonly string[];
+  note?: string;
+};
+
+/** Paneles de detección viral por cultivo (PCR-Multiplex). */
+export const pathogenPanels: PathogenPanel[] = [
+  {
+    crop: "Semillas Solanáceas",
+    pathogens: ["ToBRFV", "TMV", "PepMV (tomate)", "PMMoV (pimiento)"],
+  },
+  {
+    crop: "Carozos (Prunus spp.)",
+    pathogens: ["PNRSV", "PDV", "PPV", "CVA", "CGRMV", "CNRMV", "PBNSPaV", "LChV-1"],
+    note: "Incluye PPV Raza D — ver certificación SAG.",
+  },
+];
+
+/** Formatos de reacción multipatógenos disponibles. */
+export const reactionFormats = [
+  { label: "Singleplex", detail: "1 virus" },
+  { label: "Duplex", detail: "2 virus" },
+  { label: "Triplex", detail: "3 virus" },
+  { label: "Tetraplex", detail: "4 virus" },
+  { label: "Panel 5", detail: "5 virus" },
+  { label: "Panel 8", detail: "8 virus" },
+] as const;
+
 /** Las tres plataformas propietarias de Multiplex Fitosanidad. */
 export const platforms: Platform[] = [
   {
@@ -22,13 +51,13 @@ export const platforms: Platform[] = [
     name: "PCR-Multiplex",
     tag: "Nuestros servicios",
     title: "Diagnóstico por PCR-Multiplex",
-    body: "Detección simultánea de múltiples patógenos virales en una sola muestra, más allá de la RT-qPCR singleplex convencional.",
+    body: "Detección simultánea de múltiples patógenos virales en una sola muestra — como servicio diagnóstico o como venta de kits para tu propio laboratorio.",
     icon: "Sequence",
     href: "/diagnostico-por-pcr-multiplex",
     points: [
-      "Protocolos optimizados para carozos, cítricos, berries, uva, hortalizas y semillas",
-      "Asesoría científico-técnica para proyectos fitosanitarios",
-      "Protocolos personalizados según cultivo y objetivo",
+      "Paneles específicos para semillas solanáceas y carozos (Prunus spp.)",
+      "Formatos desde singleplex hasta panel de 8 virus",
+      "Venta de kits multipatógenos para laboratorios con capacidad técnica instalada",
     ],
   },
   {
@@ -50,26 +79,26 @@ export const platforms: Platform[] = [
     name: "Ampliplex™",
     tag: "I+D+i",
     title: "Diagnósticos custom-made",
-    body: "Paneles NGS y RT-qPCR diseñados a la medida de cada operación, sobre la plataforma bioinformática propietaria Ampliplex™.",
+    body: "Paneles NGS y RT-qPCR diseñados a la medida del cliente o del segmento, sobre la plataforma bioinformática propietaria Ampliplex™.",
     icon: "Beaker",
     href: "/diagnosticos-custom-made",
     points: [
       "Integra bases genómicas actuales y evidencia científica reciente",
       "Identifica el agente causal antes de que comprometa la producción",
-      "Se adapta a protocolos, plazos y objetivos comerciales del cliente",
+      "Esquema de piloto y escalabilidad progresiva, validado por segmento productivo",
     ],
   },
   {
     id: "bacterioscope",
-    name: "Bacterioscope™",
+    name: "Pipeline de ensayos",
     tag: "I+D+i",
     title: "Bacterias no cultivables y fastidiosas",
-    body: "Paneles NGS diseñados para analizar el código genético de bacterias difíciles de aislar, que los análisis convencionales no logran detectar con certeza.",
+    body: "Pipeline de diseño de ensayos para detección específica de bacterias y patovares difíciles de aislar, que los análisis convencionales no logran detectar con certeza.",
     icon: "Bacteria",
     href: "/bacterias-no-cultivables-y-fastidiosas",
     points: [
       "Alta especificidad, sensibilidad y certeza diagnóstica",
-      "Servicios personalizados según el grupo bacteriano de interés",
+      "Servicios personalizados según la bacteria o patovar de interés",
       "Acompañamiento de un equipo de especialistas",
     ],
   },
@@ -96,7 +125,7 @@ export const reasons: Reason[] = [
   },
   {
     title: "Compatibilidad con certificación oficial",
-    body: "Diagnósticos alineados con los programas de certificación fitosanitaria vigentes.",
+    body: "Laboratorio tercero autorizado por el SAG, incluido en la Lista de laboratorios autorizados para realizar el Diagnóstico de Plum Pox Virus Raza D (PPV-D).",
     icon: "Shield",
   },
   {
@@ -126,7 +155,9 @@ export type NewsPost = {
   date: string;
   title: string;
   excerpt: string;
-  image: string;
+  /** Foto original de la noticia. Si no hay una real disponible, se omite y
+   * se usa un fallback de marca (ver renderConditional en las páginas de noticias). */
+  image?: string;
   body: NewsBlock[];
 };
 
@@ -135,6 +166,33 @@ export type NewsPost = {
  * Los `slug` son los originales del sitio anterior (se conservan por SEO).
  */
 export const newsPosts: NewsPost[] = [
+  {
+    slug: "multiplex-laboratorio-tercero-autorizado-sag-ppv-d",
+    date: "2026-08-11",
+    title: "Multiplex es laboratorio tercero autorizado por el SAG para el diagnóstico de Plum Pox Virus Raza D",
+    excerpt: "Estamos incluidos en la Lista de laboratorios autorizados por el SAG para realizar el Diagnóstico de Plum Pox Virus Raza D (PPV-D), con metodología certificada mediante RT-PCR.",
+    image: "/images/noticias/sag-ppv-d.jpg",
+    body: [
+      {
+        type: "p",
+        text: "Multiplex Fitosanidad fue incluido en la Lista de laboratorios autorizados por el Servicio Agrícola y Ganadero (SAG) para realizar el Diagnóstico de Plum Pox Virus Raza D (PPV-D), la variante de mayor impacto económico del virus que afecta a especies de carozo (Prunus spp.) a nivel mundial.",
+      },
+      { type: "h3", text: "Qué significa esta autorización" },
+      {
+        type: "p",
+        text: "Como laboratorio tercero autorizado, nuestros resultados de diagnóstico de PPV-D tienen validez oficial ante el SAG, mediante una metodología certificada por RT-PCR. Esto permite a productores, viveros y exportadores de carozo contar con un respaldo regulatorio directo al certificar material vegetal libre del virus.",
+      },
+      { type: "h3", text: "Parte de nuestro panel de carozos" },
+      {
+        type: "p",
+        text: "El diagnóstico de PPV-D se suma a nuestro panel de detección viral para carozos (Prunus spp.), que además incluye PNRSV, PDV, CVA, CGRMV, CNRMV, PBNSPaV y LChV-1 — disponible en formatos de reacción multipatógenos, desde singleplex hasta panel de 8 virus.",
+      },
+      {
+        type: "p",
+        text: "Si tu vivero, huerto o exportadora necesita certificar material de carozo libre de Plum Pox Virus, contáctanos para conocer el proceso de muestreo y análisis.",
+      },
+    ],
+  },
   {
     slug: "multiplex-viroscope-arica-en-el-foco-fitosanitario-diagnosticos-moleculares-para-una-agricultura-sostenible",
     date: "2025-01-20",

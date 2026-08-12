@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "I+D+i",
-  description: "Nuestra división de investigación, desarrollo e innovación: diagnósticos custom-made (Ampliplex™) y detección de bacterias no cultivables (Bacterioscope™).",
+  description: "Nuestra división de investigación, desarrollo e innovación: diagnósticos custom-made (Ampliplex™) y un pipeline de diseño de ensayos para detección específica de bacterias y patovares.",
   path: "/i-d-i",
 });
 

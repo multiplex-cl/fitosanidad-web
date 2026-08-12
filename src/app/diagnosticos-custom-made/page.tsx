@@ -53,6 +53,11 @@ export default function CustomMadePage() {
               Tu operación es única. Tu diagnóstico también debe serlo. Adaptamos la tecnología a tus protocolos,
               plazos y objetivos comerciales para habilitar un manejo dirigido y costo-efectivo.
             </p>
+            <p className="mt-4 text-[15px] leading-relaxed text-muted">
+              No todos los desarrollos parten de cero: algunos se diseñan a la medida del cliente, y otros a la
+              medida del segmento — bajo un esquema de piloto con escalabilidad progresiva, ya validado en múltiples
+              operaciones del mismo rubro.
+            </p>
           </Reveal>
         </div>
       </Section>

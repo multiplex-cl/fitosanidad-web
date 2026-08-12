@@ -13,7 +13,8 @@ export function Footer() {
             <Logo />
             <p className="mt-4 text-sm leading-relaxed text-muted">
               Diagnóstico molecular fitosanitario para el agronegocio: PCR-Multiplex, diagnóstico funcional viral
-              (Viroscope™), paneles a medida (Ampliplex™) y detección de bacterias no cultivables (Bacterioscope™).
+              (Viroscope™), paneles a medida (Ampliplex™) y un pipeline de diseño de ensayos para detección
+              específica de bacterias y patovares.
             </p>
             <p className="mt-4 text-sm text-muted">
               <a href={`mailto:${site.email}`} className="font-medium text-ink hover:text-brand-strong">

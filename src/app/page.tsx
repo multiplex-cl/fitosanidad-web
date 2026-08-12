@@ -70,7 +70,7 @@ export default function HomePage() {
         <SectionHeader
           eyebrow="Nuestras plataformas"
           title="Cuatro plataformas propietarias para el diagnóstico fitosanitario"
-          body="Ampliplex™, Viroscope™ y Bacterioscope™ operan sobre la misma infraestructura de secuenciación y bioinformática, adaptadas a cada objetivo diagnóstico."
+          body="Ampliplex™ y Viroscope™ operan sobre la misma infraestructura de secuenciación y bioinformática, junto a nuestro pipeline de diseño de ensayos para bacterias y patovares — todas adaptadas a cada objetivo diagnóstico."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {platforms.map((p, i) => {
@@ -84,6 +84,7 @@ export default function HomePage() {
                   icon={<IconCmp className="h-5 w-5" />}
                   href={p.href}
                   cta="Conocer más"
+                  points={p.points}
                   className="h-full"
                 />
               </Reveal>

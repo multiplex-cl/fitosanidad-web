@@ -50,7 +50,7 @@ export const globalKeywords = [
   "diagnóstico molecular vegetal",
   "Viroscope",
   "Ampliplex",
-  "Bacterioscope",
+  "detección de patovares",
   "patógenos virales plantas",
   "certificación material vegetal",
   "bacterias no cultivables",

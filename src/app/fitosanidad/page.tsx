@@ -11,7 +11,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Fitosanidad",
   description:
-    "Innovación y confianza en diagnóstico fitosanitario: secuenciación de nueva generación, PCR/qPCR/RT-qPCR multiplex, Ampliplex™, Viroscope™ y Bacterioscope™.",
+    "Innovación y confianza en diagnóstico fitosanitario: secuenciación de nueva generación, PCR/qPCR/RT-qPCR multiplex, Ampliplex™, Viroscope™ y diseño de ensayos para bacterias y patovares.",
   path: "/fitosanidad",
 });
 

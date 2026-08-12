@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description:
-    "Multiplex Fitosanidad desarrolla diagnóstico molecular para el agronegocio: PCR-Multiplex, diagnóstico funcional viral (Viroscope™), paneles a medida (Ampliplex™) y detección de bacterias no cultivables (Bacterioscope™).",
+    "Multiplex Fitosanidad desarrolla diagnóstico molecular para el agronegocio: PCR-Multiplex, diagnóstico funcional viral (Viroscope™), paneles a medida (Ampliplex™) y un pipeline de diseño de ensayos para detección específica de bacterias y patovares.",
   keywords: globalKeywords,
   authors: [{ name: site.name }],
   creator: site.name,

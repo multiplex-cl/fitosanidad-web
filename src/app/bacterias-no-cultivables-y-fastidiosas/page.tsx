@@ -35,10 +35,11 @@ export default function BacteriasPage() {
             <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-soft text-brand-strong">
               <Icon.Bacteria className="h-5 w-5" />
             </div>
-            <h3 className="mt-5 text-lg font-semibold text-ink">Bacterioscope™</h3>
+            <h3 className="mt-5 text-lg font-semibold text-ink">Pipeline de diseño de ensayos</h3>
             <p className="mt-2.5 text-[15px] leading-relaxed text-muted">
-              Ofrecemos servicios personalizados con paneles NGS diseñados para analizar el código genético de estos
-              microorganismos, con alta especificidad, sensibilidad y certeza.
+              Pipeline de diseño de ensayos para detección específica de bacterias y patovares: paneles NGS
+              diseñados para analizar el código genético de estos microorganismos, con alta especificidad,
+              sensibilidad y certeza.
             </p>
           </Reveal>
           <Reveal delay={60} className="card-surface p-6 sm:p-7">
@@ -47,7 +48,7 @@ export default function BacteriasPage() {
             </div>
             <h3 className="mt-5 text-lg font-semibold text-ink">Soluciones personalizadas</h3>
             <p className="mt-2.5 text-[15px] leading-relaxed text-muted">
-              Cada proyecto se diseña según el grupo bacteriano de interés y el contexto de tu operación, con
+              Cada proyecto se diseña según la bacteria o patovar de interés y el contexto de tu operación, con
               acompañamiento de nuestro equipo de especialistas.
             </p>
           </Reveal>
