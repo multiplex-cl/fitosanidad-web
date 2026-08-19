@@ -18,18 +18,21 @@ export type Platform = {
 export type PathogenPanel = {
   crop: string;
   pathogens: readonly string[];
+  tissues: readonly string[];
   note?: string;
 };
 
 /** Paneles de detección viral por cultivo (PCR-Multiplex). */
 export const pathogenPanels: PathogenPanel[] = [
   {
-    crop: "Semillas Solanáceas",
+    crop: "Solanáceas",
     pathogens: ["ToBRFV", "TMV", "PepMV (tomate)", "PMMoV (pimiento)"],
+    tissues: ["Semillas", "Foliar", "Fruta"],
   },
   {
-    crop: "Carozos (Prunus spp.)",
+    crop: "Frutales / Carozos (Prunus spp.)",
     pathogens: ["PNRSV", "PDV", "PPV", "CVA", "CGRMV", "CNRMV", "PBNSPaV", "LChV-1"],
+    tissues: ["Foliar", "Fruta", "Material lignificado"],
     note: "Incluye PPV Raza D — ver certificación SAG.",
   },
 ];

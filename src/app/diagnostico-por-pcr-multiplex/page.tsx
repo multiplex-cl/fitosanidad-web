@@ -29,7 +29,7 @@ export default function PcrMultiplexPage() {
             <SectionHeader
               eyebrow="Virus y viroides"
               title="Más allá de la RT-qPCR singleplex convencional"
-              body="Nuestro laboratorio detecta múltiples patógenos virales de forma simultánea a partir de una sola muestra, en lugar de procesar una reacción singleplex por cada blanco molecular."
+              body="Nuestro laboratorio detecta múltiples patógenos virales de forma simultánea a partir de una sola muestra, en lugar de procesar una reacción singleplex por cada blanco molecular. Además, adaptamos el diagnóstico al tipo de tejido disponible según el cultivo."
             />
           </Reveal>
           <Reveal delay={80} className="card-surface p-8">
@@ -45,7 +45,8 @@ export default function PcrMultiplexPage() {
                       </span>
                     ))}
                   </div>
-                  {panel.note && <p className="mt-2 text-xs text-brand-strong">{panel.note}</p>}
+                  <p className="mt-2 text-xs text-muted">Tejidos: {panel.tissues.join(", ")}</p>
+                  {panel.note && <p className="mt-1 text-xs text-brand-strong">{panel.note}</p>}
                 </div>
               ))}
               <p className="text-sm text-muted">
